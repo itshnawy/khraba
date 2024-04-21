@@ -20,6 +20,7 @@ input#area {
     width: 20vw;
 }
 div#output {
+    display: none;
     margin-top: 10px;
     font-size: 16px;
     background: #fff;

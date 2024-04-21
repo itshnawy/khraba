@@ -30,14 +30,15 @@
     results.sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt));
     
     // Return last cutting time
-    return results.length > 0 ? results[0].cuttingTime : null;
+    return results.length > 0 ? results[0].cuttingTime : "مفيش مواعيد موجوده، لو تعرف معاد القطع ضيفه في الداتا";
 }
 
 // Fetch data from CSV file
 fetch('./assets/data/data.csv')
     .then(response => response.text())
     .then(csvData => {
-        document.getElementById("area").addEventListener("input", () => {
+        document.getElementById("area").addEventListener("keyup", (event) => {
+            if (event.keyCode === 13) { // press enter button
             // Search terms
             var governorate = document.getElementById("gov").value;
             var area = document.getElementById("area").value;
@@ -46,7 +47,9 @@ fetch('./assets/data/data.csv')
             var result = searchCSV(csvData, governorate, area);
 
             // Print result
+            document.getElementById("output").style.display = "block";
             document.getElementById("output").innerHTML = result;
+            }
         });
     })
     .catch(error => console.error('Error fetching CSV file:', error));
