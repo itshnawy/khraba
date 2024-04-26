@@ -1,4 +1,38 @@
-   // Function to search CSV data
+        // sheetID you can find in the URL of your spreadsheet after "spreadsheet/d/"
+        const sheetId = "1mBke2NgEMUYjgBabRdmLFY0z-c5Q25WR3mIYVZjRxJE";
+        // sheetName is the name of the TAB in your spreadsheet
+        const sheetName = encodeURIComponent("Sheet1");
+        const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
+        
+        fetch(sheetURL)
+          .then((response) => response.text())
+          .then((csvText) => handleResponse(csvText));
+        
+        function handleResponse(csvText) {
+          let data = csvText
+          document.getElementById("area").addEventListener("keyup", (event) => {
+            if (event.keyCode === 13) { // press enter button
+            // Search terms
+            var governorate = document.getElementById("gov").value;
+            var area = document.getElementById("area").value;
+            // Search CSV data
+            var result = searchCSV(data, governorate, area);
+
+            // Print result
+            document.getElementById("output").style.display = "block";
+            document.getElementById("output").innerHTML = result;
+            }
+        })
+        }
+
+
+
+
+
+
+
+
+// Function to search CSV data
    function searchCSV(csvData, governorate, area) {
     // Split CSV data into rows
     var rows = csvData.split('\n');
@@ -33,23 +67,6 @@
     return results.length > 0 ? results[0].cuttingTime : "مفيش مواعيد موجوده، لو تعرف معاد القطع ضيفه في الداتا";
 }
 
-// Fetch data from CSV file
-fetch('./assets/data/data.csv')
-    .then(response => response.text())
-    .then(csvData => {
-        document.getElementById("area").addEventListener("keyup", (event) => {
-            if (event.keyCode === 13) { // press enter button
-            // Search terms
-            var governorate = document.getElementById("gov").value;
-            var area = document.getElementById("area").value;
 
-            // Search CSV data
-            var result = searchCSV(csvData, governorate, area);
 
-            // Print result
-            document.getElementById("output").style.display = "block";
-            document.getElementById("output").innerHTML = result;
-            }
-        });
-    })
-    .catch(error => console.error('Error fetching CSV file:', error));
+    
