@@ -8,8 +8,8 @@ fetch('assets/data/gov.json').then(response => {
 }).then(data => {
     let gov = data
     let govSelect = document.getElementById("gov");
-    govSelect.innerHTML += '<option selected data-govid="1" value="القاهرة">القاهرة</option>'
-    for (let i = 1; i < gov.length; i++) {
+    govSelect.innerHTML = '<option value="المحافظة">المحافظة</option>'
+    for (let i = 0; i < gov.length; i++) {
         govSelect.innerHTML += `<option data-govid="${gov[i].id}" value="${gov[i].gov_ar}">${gov[i].gov_ar}</option>`
     }
 })
@@ -31,7 +31,7 @@ fetch('assets/data/city.json')
     if (govSelect.selectedIndex !== -1) {
         let cities = data.filter(city => city.governorate_id === governorateId);
         let citySelect = document.getElementById("area");
-        citySelect.innerHTML = "";
+        citySelect.innerHTML = '<option value="المحافظة">المحافظة</option>'
         cities.forEach(city => {
           citySelect.innerHTML += `<option value="${city.city_ar}">${city.city_ar}</option>`;
         });
