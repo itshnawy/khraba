@@ -31,7 +31,7 @@ fetch('assets/data/city.json')
     if (govSelect.selectedIndex !== -1) {
         let cities = data.filter(city => city.governorate_id === governorateId);
         let citySelect = document.getElementById("area");
-        citySelect.innerHTML = '<option value="المحافظة">المحافظة</option>'
+        citySelect.innerHTML = '<option value="المدينة">المدينة</option>'
         cities.forEach(city => {
           citySelect.innerHTML += `<option value="${city.city_ar}">${city.city_ar}</option>`;
         });
