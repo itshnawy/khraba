@@ -1,5 +1,5 @@
         // sheetID you can find in the URL of your spreadsheet after "spreadsheet/d/"
-        const sheetId = "1mBke2NgEMUYjgBabRdmLFY0z-c5Q25WR3mIYVZjRxJE";
+        const sheetId = "1A5eTnALiSbdoYwsHnUGJhASXEx_o3ZPo2xxdYFGegMQ";
         // sheetName is the name of the TAB in your spreadsheet
         const sheetName = encodeURIComponent("Sheet1");
         const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
@@ -10,8 +10,7 @@
         
         function handleResponse(csvText) {
           let data = csvText
-          document.getElementById("area").addEventListener("keyup", (event) => {
-            if (event.keyCode === 13) { // press enter button
+          document.getElementById("area").addEventListener("change", () => {
             // Search terms
             var governorate = document.getElementById("gov").value;
             var area = document.getElementById("area").value;
@@ -21,7 +20,7 @@
             // Print result
             document.getElementById("output").style.display = "block";
             document.getElementById("output").innerHTML = result;
-            }
+            
         })
         }
 

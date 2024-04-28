@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اضافه موعد قطع</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favico/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favico/site.webmanifest">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body id="addbody">
+    <form id="add" name="add" method="post" action=""> 
+        <select name="المحافظة" id="gov" class="mb-3"></select>  
+        <select name="المنطقة" id="area" class="mb-3">
+            <option value="المنطقة">المنطقة</option>
+        </select> 
+        <input type="text" name="المعاد" id="time" placeholder="المعاد مثال: من 2 الي 4 الظهر" class="mb-3"/> 
+        <input type="text" name="Submitted at" id="Submittedat" class="mb-3"/> 
+
+        <button type="submit" id="addbtn">اضافه</button>
+    </form>
+        <script src="/assets/js/add.js"></script>
+        <script src="/assets/js/govcit.js"></script>
+</body>
+</html>

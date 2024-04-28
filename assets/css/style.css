@@ -7,15 +7,39 @@ body {
     justify-content: center;
     height: 100vh;
 }
+#addbody {
+  background-color: #0f0f0f;
+  overflow: hidden;
+}
+input#Submittedat {
+  display: none;
+}
+#add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 50vw;
+}
+button#addbtn {
+  cursor: pointer;
+}
+.mb-3 {
+  margin: 3px;
+}
 * {
     font-family: "tajawal";
 }
-select, input {
+select, input, button {
     background: #fff;
     border-radius: 5px;
     padding: 9px;
     font-size: 16px;
 }
+button#addbtn {
+  font-weight: bold;
+}
+
 input#area {
     width: 20vw;
 }
@@ -32,7 +56,73 @@ p {
 }
 p a {
     color: #7d25d0;
+    cursor: pointer;
 }
 div#logo img {
     width: 25vw;
+}
+
+/*Model Container*/
+.addModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0px 10px 26px -2px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    height: 600px;
+  }
+  #close-btn {
+    all: unset;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: bolder;
+  }
+  #mdContainer {
+    padding: 31px;
+    overflow-y: scroll;
+    height: 80%;
+  }
+  #mdContainer.m {
+    height: 72%;
+}
+  .addModal .header {
+    text-align: center;
+    border-bottom: 1px solid #9c9c9c94;
+  }
+  .addModal .header h1 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .addModal .footer {
+    border-top: 1px solid #9c9c9c94;
+}
+.addModal iframe {
+    width: 100%;
+    height: 80%;
+}
+/*Overlay*/
+  div#overlay {
+    width: 100%;
+    background: #0000008c;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    cursor: pointer;
+  }
+/*Media Query*/
+@media (max-width: 576px) {
+  .addModal {
+    max-width: 250px;
+  }
+}
+
+@media (min-width: 576px) {
+  .addModal {
+    max-width: 500px;
+  }
 }
