@@ -12,12 +12,12 @@
 </head>
 <body id="addbody">
     <form id="add" name="add" method="post" action=""> 
-        <select name="المحافظة" id="gov" class="mb-3">
+        <select name="المحافظة" id="gov" class="mb-3" required>
         </select>  
-        <select name="المنطقة" id="area" class="mb-3">
+        <select name="المنطقة" id="area" class="mb-3" required>
             <option value="المدينة">المدينة</option>
         </select> 
-        <input type="text" name="المعاد" id="time" placeholder="المعاد مثال: من 2 الي 4 الظهر" class="mb-3"/> 
+        <input type="text" name="المعاد" id="time" required placeholder="المعاد مثال: من 2 الي 4 الظهر" class="mb-3"/> 
         <input type="text" name="Submitted at" id="Submittedat" class="mb-3"/> 
 
         <button type="submit" id="addbtn">اضافه</button>

@@ -4,10 +4,15 @@ document.getElementById("Submittedat").value = date;
 const form = document.forms['add'];
 
 form.addEventListener("submit", e => {
-    e.preventDefault();
-
-    fetch(scriptUrl,{ method: 'POST', body: new FormData(form)})
-    .then(response => alert("المعاد اتضاف بنجاح"))
-    .then(() => {window.location.reload()})
-    .catch(error => console.log("فيه ايرور يسطا"))
+  e.preventDefault();
+  const area = document.getElementById('area').value;
+  const gov = document.getElementById('gov').value;
+  if (area != 'المدينة' && gov != 'المحافظة') {
+    fetch(scriptUrl, { method: 'POST', body: new FormData(form) })
+      .then(response => alert("المعاد اتضاف بنجاح"))
+      .then(() => { window.location.reload() })
+      .catch(error => console.log("فيه ايرور يسطا"))
+  } else {
+    alert("فيه مشكله شكلك مخترتش المدينة او المحافظة")
+  }
 })
