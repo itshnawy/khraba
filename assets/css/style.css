@@ -128,6 +128,24 @@ div#logo img {
     font-size: 20px;
     color: #d5d5d5;
 }
+div#countAnn {
+    display: flex;
+    align-items: center;
+    margin-bottom: 11px;
+}
+#countAnn i {
+    color: #a9a9a9;
+    background: #222222;
+    padding: 6px 11px;
+    border-radius: 3px;
+    border: 1px solid #2b2b2b;
+    margin-left: 6px;
+    font-size: 10px;
+}
+p#count {
+    color: #a9a9a9;
+    font-size: 15px;
+}
 /*Overlay*/
   div#overlay {
     width: 100%;

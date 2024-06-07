@@ -7,7 +7,7 @@ fetch(sheetURL)
   .then((csvText) => {
     let rows = csvText.split('\n');
     let rowsCount = rows.length;
-    document.getElementById("count").innerHTML = "المدن المتوفره هي  " + rowsCount + " مدينة " + " من اصل " + "396 مدينة"
+    document.getElementById("count").innerHTML = "متوفر " + (rowsCount - 1) + " مدينة " + " من اصل " + 396 + " مدينة";
 
     handleResponse(csvText)
   });
