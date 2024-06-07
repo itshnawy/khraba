@@ -16,10 +16,11 @@
         </select>  
         <select name="المنطقة" id="area" class="mb-3" >
             <option value="المدينة">المدينة</option>
-        </select> 
-        <input type="text" name="المعاد" id="time" required placeholder="المعاد مثال: من 2 الي 4 الظهر" class="mb-3"/> 
+        </select>
+        <input name="من" id="from" placeholder="وقت بدايه القطع" type="number" min="1" max="12" class="mb-3" />
+        <input name="الي" id="to" placeholder="وقت رجوع الكهربا" type="number" min="1" max="12" class="mb-3" />
         <input type="text" name="Submitted at" id="Submittedat" class="mb-3"/> 
-
+        <input type="text" name="المعاد" id="timing" class="mb-3"/> 
         <button type="submit" id="addbtn">اضافه</button>
     </form>
         <script src="/assets/js/add.js"></script>

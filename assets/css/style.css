@@ -11,7 +11,7 @@ body {
   background-color: #0f0f0f;
   overflow: hidden;
 }
-input#Submittedat {
+input#Submittedat, input#timing {
   display: none;
 }
 #add {
