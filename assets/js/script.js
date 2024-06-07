@@ -4,7 +4,13 @@ const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=
 
 fetch(sheetURL)
   .then((response) => response.text())
-  .then((csvText) => handleResponse(csvText));
+  .then((csvText) => {
+    let rows = csvText.split('\n');
+    let rowsCount = rows.length;
+    document.getElementById("count").innerHTML = "المدن المتوفره هي  " + rowsCount + " مدينة " + " من اصل " + "396 مدينة"
+
+    handleResponse(csvText)
+  });
 
 function handleResponse(csvText) {
   let data = csvText
@@ -45,3 +51,4 @@ function searchCSV(csvData, governorate, area) {
   // Return last cutting time
   return results.length > 0 ? results[0].cuttingTime : "مفيش مواعيد موجوده، لو تعرف معاد القطع ضيفه في الداتا";
 }
+
