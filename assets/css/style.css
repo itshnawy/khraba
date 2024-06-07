@@ -19,7 +19,7 @@ input#Submittedat, input#timing {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
+  align-items: center ;
   width: 50vw;
 }
 button#addbtn {
@@ -189,7 +189,12 @@ h2.title {
     color: #d6d6d6;
     margin: 12px 0px;
 }
-
+#add input {
+    width: 48.6vw;
+}
+#add select, #add button {
+    width: 50vw;
+}
 /*Overlay*/
   div#overlay {
     width: 100%;
