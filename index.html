@@ -9,10 +9,16 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favico/favicon-16x16.png">
     <link rel="manifest" href="/assets/favico/site.webmanifest">
     <link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+  <!---->
 <body>
 
 <div id="logo"><img src="/assets/img/logo.png" alt="logo"></div>
+    <div id="countAnn">
+      <i class="fa-solid fa-exclamation"></i>
+      <p id="count"></p>
+    </div>
 <div id="input"> 
 <select name="المحافظة" id="gov">
 </select>  
@@ -21,11 +27,21 @@
 </select>  
 </div>
 <div id="output">.....</div>
-<p> منطقتك مش موجود؟
-<a id="contr">ضيف منطقتك</a>
-</p>
 
-    <a href='https://twitter.com/mohammedlshnawy' target='_blank' id='twitter'><img src='./assets/img/x.png' alt='x-logo'/></a>
+<section id="news" hidden>
+
+<div class="card">
+<div class="card-img"><img src="https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_1920,c_scale,q_auto/cnnarabic/2024/06/05/images/269809.avif" alt="article-image"></div>
+<a href="https://arabic.cnn.com/middle-east/article/2024/06/05/sawiris-responds-phrase-ypu-have-much-say-afraid" target="_blank"><h2 class="title">
+          قطع الكهرباء في مصر.. ساويرس يرد على عبارة "عندك كتير عاوز تقوله وخايف"
+          <i class="fa-solid fa-up-right-from-square"></i>  
+        </h2></a>
+        <p> أكد رجل الأعمال المصري نجيب ساويرس، أن لديه الكثير ليقوله بشأن موضوع مدة قطع الكهرباء في مصر وأشار إلى أنه ليس خائفا من قوله إلا أنه يعلم أن ذلك "لن يقدم أو يؤخر". </p>
+      </div>
+</section>
+
+
+<button id='addcity'><i class="fa-solid fa-plus"></i></button>
 <script src="/assets/js/addModal.js"></script>
 <script src="/assets/js/govcit.js"></script>
 <script src="/assets/js/script.js"></script>

@@ -7,6 +7,10 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   const area = document.getElementById('area').value;
   const gov = document.getElementById('gov').value;
+  const from = document.getElementById("from").value;
+  const to = document.getElementById("to").value;
+
+  document.getElementById("timing").value = "من " + from + " الي " + to;
   if (area != 'المدينة' && gov != 'المحافظة') {
     fetch(scriptUrl, { method: 'POST', body: new FormData(form) })
       .then(response => alert("المعاد اتضاف بنجاح"))
